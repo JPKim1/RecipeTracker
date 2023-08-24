@@ -54,81 +54,61 @@ table {
   text-overflow: ellipsis;
 }
 
-body {
-  margin: 0;
-  font-family: "helvetica neue", sans-serif;
-  background-color: #f9f9f9;
-}
-
-.App {
-  padding: 1em;
-  text-align: center;
-}
-
-h1 {
-  font-family: "Playfair Display SC", serif;
-  font-size: 64px;
-}
-
-table {
-  table-layout: fixed;
-  width: 100%;
-  border-collapse: collapse;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-thead th,
-tfoot th {
-  font-family: "Rock Salt", cursive;
-}
-
-th,
-td {
-  padding: 10px;
-}
-
-thead th:nth-child(1),
-tbody td:nth-child(1),
-tfoot th:nth-child(1) {
-  width: 10%;
-}
-
-thead th:nth-child(2),
-tbody td:nth-child(2),
-tfoot th:nth-child(2) {
-  width: 10%;
-}
-
-thead th:nth-child(3),
-tbody td:nth-child(3),
-tfoot th:nth-child(3) {
-  width: 30%;
-}
-
-thead th:nth-child(4),
-tbody td:nth-child(4),
-tfoot th:nth-child(4) {
-  width: 30%;
-}
-
-.content_td {
-  max-width: 100%;
-  max-height: 100px;
-  overflow-y: auto;
-  text-overflow: ellipsis;
-}
-
-img {
-  width: 100px;
-  height: 100px;
-  object-fit: scale-down;
-}
-
-tbody tr:nth-child(odd) {
-  background-color: #fff0c7;
-}
-
 /* Column Size for thead */
 
 
 /* Column size for tbody */
+
+/* NEW ADDITIONS */
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 64px;
+}
+
+table {
+  /* Existing styles */
+}
+
+thead th {
+  /* Add styles for table headers */
+  background-color: #f2f2f2; /* Change to your preferred color */
+  font-size: 16px; /* Adjust the font size */
+  font-weight: bold;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fff0c7; /* Zebra striping color */
+}
+
+/* Set the first column width */
+tbody td:nth-child(1) {
+  width: 10%;
+}
+
+/* Set the second column width */
+tbody td:nth-child(2) {
+  width: 10%;
+}
+
+/* Set the third column width */
+tbody td:nth-child(3) {
+  width: 30%;
+}
+
+/* Set the fourth column width */
+tbody td:nth-child(4) {
+  width: 30%;
+}
+
+<td className="content_td">
+  <p>{recipe.ingredients}</p>
+</td>
+
+<td className="content_td">
+  <p>{recipe.preparation}</p>
+</td>
