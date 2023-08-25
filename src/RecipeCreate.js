@@ -22,14 +22,20 @@ function RecipeCreate({ recipes, setRecipes }) {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Submitted", formData);
-    const target = event.target;
-    setRecipes([...recipes, formData]);
-    setFormData({ ...initialFormState });
-  };
+  event.preventDefault();
+  // Check if any required fields are empty
+  if (!formData.name || !formData.cuisine || !formData.photo || !formData.ingredients || !formData.preparation) {
+    alert("Please fill in all fields before creating a recipe.");
+    return;
+  }
+  console.log("Submitted", formData);
+  const target = event.target;
+  setRecipes([...recipes, formData]);
+  setFormData({ ...initialFormState });
+};
 
   return (
+    <div className="form-container">
     <form name="create" onSubmit={handleSubmit}>
       <table>
         <tbody>
@@ -101,6 +107,7 @@ function RecipeCreate({ recipes, setRecipes }) {
         </tbody>
       </table>
     </form>
+    </div>
   );
 }
 
